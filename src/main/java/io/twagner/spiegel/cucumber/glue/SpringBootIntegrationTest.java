@@ -7,4 +7,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 @CucumberContextConfiguration
 @SpringBootTest(classes = SpiegelFrameworkContext.class)
 public abstract class SpringBootIntegrationTest {
+    /* All glue code classes should subclass this abstract class */
 }
