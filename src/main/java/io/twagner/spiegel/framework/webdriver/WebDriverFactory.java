@@ -1,7 +1,6 @@
 package io.twagner.spiegel.framework.webdriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.twagner.spiegel.framework.configuration.SpiegelConfiguration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -20,10 +19,8 @@ public class WebDriverFactory {
     }
 
     public static WebDriver getWebDriver(SupportedDriverTypes browserType) {
-//        System.out.println("HELLO DEBUGGER");
 //        ApplicationContext ctx = new AnnotationConfigApplicationContext(SpiegelContext.class);
 //        SpiegelConfiguration frameworkConfig = ctx.getBean("SpiegelConfiguration", SpiegelConfiguration.class);
-//        System.out.println("HELLO DEBUGGER");
 
         WebDriver driver;
         // TODO: Configure options for the individual browsers (where supported), as well.
@@ -32,7 +29,6 @@ public class WebDriverFactory {
             case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
-                System.out.println("HELLO DEBUGGER");
                 break;
             case SAFARI:
                 // NOTE: webdrivermanager does not manage or configure Safari
@@ -47,13 +43,11 @@ public class WebDriverFactory {
                 driver = new InternetExplorerDriver();
                 break;
             default:
-                System.out.println("HELLO DEBUGGER");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
         }
 
-        System.out.println("HELLO DEBUGGER");
         return driver;
     }
 }
