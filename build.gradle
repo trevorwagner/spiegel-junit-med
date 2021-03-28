@@ -6,10 +6,13 @@ targetCompatibility = JavaVersion.VERSION_11
 
 ext {
     versions = [
-            hamcrest  : '2.2',
-            cucumber  : '6.10.2',
-            spring    : '5.3.5',
-            springBoot: '2.4.2'
+            cucumber        : '6.10.2',
+            hamcrest        : '2.2',
+            jackson         : '2.12.1',
+            selenium        : '3.141.59',
+            spring          : '5.3.5',
+            springBoot      : '2.4.2',
+            webdriverManager: '4.3.1'
     ]
 }
 
@@ -36,12 +39,26 @@ dependencies {
     implementation group: 'org.hamcrest', name: 'hamcrest', version: rootProject.versions.hamcrest
 
 
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: versions.jackson
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: versions.jackson
+
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: rootProject.versions.selenium
+
+
     // https://mvnrepository.com/artifact/org.springframework/spring-core
     implementation group: 'org.springframework', name: 'spring-core', version: rootProject.versions.spring
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: rootProject.versions.springBoot
 
+
+    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: rootProject.versions.webdriverManager
 }
 
 task runCucumberTests(type: JavaExec) {
