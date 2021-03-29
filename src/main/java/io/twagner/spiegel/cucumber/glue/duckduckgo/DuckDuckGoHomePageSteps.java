@@ -2,6 +2,7 @@ package io.twagner.spiegel.cucumber.glue.duckduckgo;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.twagner.spiegel.cucumber.glue.SpringBootIntegrationTest;
 import io.twagner.spiegel.cucumber.glue.support.languages.en.Expectation;
 import io.twagner.spiegel.pageobjects.duckduckgo.DuckDuckGoHomePage;
@@ -20,11 +21,11 @@ public class DuckDuckGoHomePageSteps extends SpringBootIntegrationTest {
         }
     }
 
-//    @Given("^the user enters a search query of (.*) to the search field on the DuckDuckGo home page$")
-//    public void theUserEntersASearchQueryOfSearchQueryToTheSearchField(String searchQuery) throws Throwable {
-//        this.duckDuckGoHomePage = PageFactory.initElements(webDriver, DuckDuckGoHomePage.class);
-//        this.duckDuckGoHomePage.searchField.sendKeys(searchQuery);
-//    }
+    @Given("^the user enters a search query of (.*) to the search field on the DuckDuckGo home page$")
+    public void theUserEntersASearchQueryOfSearchQueryToTheSearchField(String searchQuery) throws Throwable {
+        this.duckDuckGoHomePage = PageFactory.initElements(webDriver, DuckDuckGoHomePage.class);
+        this.duckDuckGoHomePage.searchField.sendKeys(searchQuery);
+    }
 
     @Given("^the user clicks the search button on the DuckDuckGo home page$")
     public void theUserClicksTheSearchButton() throws Throwable {
@@ -32,12 +33,12 @@ public class DuckDuckGoHomePageSteps extends SpringBootIntegrationTest {
         duckDuckGoHomePage.searchButton.click();
     }
 
-//    @When("^the user executes a search for (.*) on the DuckDuckGo home page$")
-//    public void theUserExecutesASearchForSearchQuery(String searchQuery) throws Throwable {
-//        this.duckDuckGoHomePage = PageFactory.initElements(webDriver, DuckDuckGoHomePage.class);
-//        this.duckDuckGoHomePage.searchField.sendKeys(searchQuery);
-//        this.duckDuckGoHomePage.searchButton.click();
-//    }
+    @When("^the user executes a search for (.*) on the DuckDuckGo home page$")
+    public void theUserExecutesASearchForSearchQuery(String searchQuery) throws Throwable {
+        this.duckDuckGoHomePage = PageFactory.initElements(webDriver, DuckDuckGoHomePage.class);
+        this.duckDuckGoHomePage.searchField.sendKeys(searchQuery);
+        this.duckDuckGoHomePage.searchButton.click();
+    }
 
     @Then("^the page title on the DuckDuckGo home page (should|should not) display as (.*)$")
     public void thePageTitleShouldShouldNotBeTitle(String shouldIt, String title) throws Throwable {
