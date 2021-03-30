@@ -10,6 +10,14 @@ public class Expectation {
     private final List<String> falseValues = Arrays.asList("false", "should not");
 
     private boolean parseValue(String provided) {
+        if(provided == null){
+            throw new IllegalArgumentException();
+        }
+
+        if (provided.replaceAll("\\s+", "").equals("")) {
+            throw new IllegalArgumentException();
+        }
+
         if (!trueValues.contains(provided)) {
             if (!falseValues.contains(provided)) {
                 throw new Error("The provided string ( "
