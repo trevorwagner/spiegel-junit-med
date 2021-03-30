@@ -24,6 +24,7 @@ public class OrdinalNumberTest {
                 arguments("1000th", 1000)
         );
     }
+
     @ParameterizedTest
     @MethodSource
     public void convertsOrdinalStringToIntValue(String inputString, int expectedResult) {
@@ -41,6 +42,7 @@ public class OrdinalNumberTest {
                 arguments("1000th", 999)
         );
     }
+
     @ParameterizedTest
     @MethodSource
     public void convertsOrdinalStringToZeroIndex(String inputString, int expectedResult) {
