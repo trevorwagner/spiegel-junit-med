@@ -10,7 +10,7 @@ public class Expectation {
     private final List<String> falseValues = Arrays.asList("false", "should not");
 
     private boolean parseValue(String provided) {
-        if(provided == null){
+        if (provided == null) {
             throw new IllegalArgumentException();
         }
 

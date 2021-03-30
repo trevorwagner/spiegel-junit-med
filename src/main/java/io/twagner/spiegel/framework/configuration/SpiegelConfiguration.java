@@ -17,8 +17,8 @@ public class SpiegelConfiguration {
 
     private static SpiegelConfiguration instance;
 
-    public static SpiegelConfiguration getInstance(){
-        if(instance == null) {
+    public static SpiegelConfiguration getInstance() {
+        if (instance == null) {
             instance = ConfigLoader.loadConfiguration();
         }
         return instance;

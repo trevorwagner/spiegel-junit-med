@@ -14,7 +14,7 @@ public class WebDriverFactory {
     // driver type is usable in the current system (e.g. we're not trying
     // to run MSIE on a mac).
     //
-    public static WebDriver getWebDriver(){
+    public static WebDriver getWebDriver() {
         return getWebDriver(SupportedDriverTypes.CHROME);
     }
 

@@ -16,7 +16,7 @@ public class DuckDuckGoHomePageSteps extends SpringBootIntegrationTest {
 
     @Given("^the user navigates to the DuckDuckGo homepage$")
     public void theUserNavigatesToTheDuckDuckGoHomepage() throws Throwable {
-        if(!webDriver.getCurrentUrl().equals(DuckDuckGoHomePage.PAGE_URL)) {
+        if (!webDriver.getCurrentUrl().equals(DuckDuckGoHomePage.PAGE_URL)) {
             webDriver.get(DuckDuckGoHomePage.PAGE_URL);
         }
     }

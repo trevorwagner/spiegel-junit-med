@@ -21,7 +21,7 @@ public class DuckDuckGoHomePage {
     @FindBy(xpath = XPATH_SEARCH_FORM + "/input[@id='search_button_homepage']")
     public WebElement searchButton;
 
-    public DuckDuckGoHomePage enterSearchString(String searchQuery){
+    public DuckDuckGoHomePage enterSearchString(String searchQuery) {
         this.searchField.sendKeys(searchQuery);
         return this;
     }
