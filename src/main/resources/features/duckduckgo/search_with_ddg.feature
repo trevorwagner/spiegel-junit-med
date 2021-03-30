@@ -1,6 +1,6 @@
 Feature: Search with DuckDuckGo
 
-  Provides basic coverage of executing searches with DuckDuckGo
+  Provides basic coverage of executing searches with DuckDuckGo.
 
   Scenario: Executing a Search causes the search engine results page to display
     Given the user navigates to the DuckDuckGo homepage
