@@ -6,12 +6,18 @@ targetCompatibility = JavaVersion.VERSION_11
 
 ext {
     versions = [
+            apacheCommons   : [
+                    text: '1.9'
+            ],
             cucumber        : '6.10.2',
             hamcrest        : '2.2',
             jackson         : '2.12.1',
+            junit           : '5.7.1',
+            spring          : [
+                    framework: '5.3.5',
+                    boot     : '2.4.2'
+            ],
             selenium        : '3.141.59',
-            spring          : '5.3.5',
-            springBoot      : '2.4.2',
             webdriverManager: '4.3.1'
     ]
 }
@@ -22,9 +28,17 @@ repositories {
 
 test {
     useJUnitPlatform()
+    reports {
+        junitXml.enabled = true
+        html.enabled = false
+    }
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-text
+    implementation group: 'org.apache.commons', name: 'commons-text', version: rootProject.versions.apacheCommons.text
+
+
     // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
     implementation group: 'io.cucumber', name: 'cucumber-java', version: rootProject.versions.cucumber
 
@@ -51,14 +65,22 @@ dependencies {
 
 
     // https://mvnrepository.com/artifact/org.springframework/spring-core
-    implementation group: 'org.springframework', name: 'spring-core', version: rootProject.versions.spring
+    implementation group: 'org.springframework', name: 'spring-core', version: rootProject.versions.spring.framework
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: rootProject.versions.springBoot
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: rootProject.versions.spring.boot
 
 
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: rootProject.versions.webdriverManager
+
+
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest
+    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: rootProject.versions.hamcrest
+
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: rootProject.versions.junit
+
 }
 
 task runCucumberTests(type: JavaExec) {
