@@ -5,7 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         features = "src/main/resources/features",
         glue = "io.twagner.spiegel.cucumber.glue",
-        plugin = {"progress"}
+        plugin = {"pretty"}
 )
 public class AllTestsSuite extends SuiteParent {
 }
