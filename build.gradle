@@ -9,16 +9,16 @@ ext {
             apacheCommons   : [
                     text: '1.9'
             ],
-            cucumber        : '6.10.2',
+            cucumber        : '6.11.0',
             hamcrest        : '2.2',
-            jackson         : '2.12.1',
+            jackson         : '2.13.0',
             junit           : '5.7.1',
             spring          : [
                     framework: '5.3.5',
                     boot     : '2.4.2'
             ],
-            selenium        : '3.141.59',
-            webdriverManager: '4.3.1'
+            selenium        : '4.1.0',
+            webdriverManager: '5.0.3'
     ]
 }
 
