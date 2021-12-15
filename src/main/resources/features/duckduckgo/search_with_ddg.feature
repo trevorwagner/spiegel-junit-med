@@ -19,4 +19,4 @@ Feature: Search with DuckDuckGo
     And the user clicks the search button on the DuckDuckGo home page
     Then the 1st search result on the DuckDuckGo search results page should have a title of DuckDuckGo — Privacy, simplified.
     And the 1st search result on the DuckDuckGo search results page should show a link URL of https://duckduckgo.com
-    And the 2nd search result on the DuckDuckGo search results page should have a title of DuckDuckGo Privacy Browser on the App Store
+    And the 2nd search result on the DuckDuckGo search results page should have a title of DuckDuckGo Privacy Browser - Apps on Google Play
