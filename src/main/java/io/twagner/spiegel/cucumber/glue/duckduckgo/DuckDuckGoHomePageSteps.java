@@ -6,7 +6,13 @@ import io.cucumber.java.en.When;
 import io.twagner.spiegel.cucumber.glue.SpringBootIntegrationTest;
 import io.twagner.spiegel.cucumber.glue.support.languages.en.Expectation;
 import io.twagner.spiegel.pageobjects.duckduckgo.DuckDuckGoHomePage;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+
+import java.time.Duration;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -51,7 +57,7 @@ public class DuckDuckGoHomePageSteps extends SpringBootIntegrationTest {
     public void theHomePageLinkShouldShouldNotDisplayOnTheDuckDuckGoHomePage(String shouldIt) throws Throwable {
         this.duckDuckGoHomePage = PageFactory.initElements(webDriver, DuckDuckGoHomePage.class);
         Expectation should = new Expectation(shouldIt);
-        assertThat(this.duckDuckGoHomePage.homePageLink.isDisplayed(), equalTo(should.it));
+        assertThat(this.duckDuckGoHomePage.homePageLogo.isDisplayed(), equalTo(should.it));
     }
 
     @Then("^the search query field (should|should not) display on the DuckDuckGo home page$")
