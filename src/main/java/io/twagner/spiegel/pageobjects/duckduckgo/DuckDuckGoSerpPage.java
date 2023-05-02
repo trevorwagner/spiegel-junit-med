@@ -39,6 +39,6 @@ public class DuckDuckGoSerpPage {
     public WebElement searchResultDiv;
 
     public WebElement getSearchResultByZeroIndex(int index) {
-        return searchResultDiv.findElement(By.xpath(".//div[@id = 'r1-" + index + "']"));
+        return searchResultDiv.findElement(By.xpath(".//article[@id = 'r1-" + index + "']"));
     }
 }
