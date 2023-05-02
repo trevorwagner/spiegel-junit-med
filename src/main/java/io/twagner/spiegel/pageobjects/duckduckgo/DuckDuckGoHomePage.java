@@ -7,18 +7,18 @@ import org.openqa.selenium.support.FindBy;
 public class DuckDuckGoHomePage {
     public static final String PAGE_URL = "https://duckduckgo.com/";
 
-    private static final String XPATH_SEARCH_FORM = "//form[@id='search_form_homepage']";
+    private static final String XPATH_SEARCH_FORM = "//form[@id='searchbox_homepage']";
 
     @CacheLookup
-    @FindBy(xpath = "//a[@id='logo_homepage_link']")
-    public WebElement homePageLink;
+    @FindBy(xpath = "//div[contains(@class, 'header_logoStacked')]/img")
+    public WebElement homePageLogo;
 
     @CacheLookup
-    @FindBy(xpath = XPATH_SEARCH_FORM + "/input[@id='search_form_input_homepage']")
+    @FindBy(xpath = XPATH_SEARCH_FORM + "//input[@id='searchbox_input']")
     public WebElement searchField;
 
     @CacheLookup
-    @FindBy(xpath = XPATH_SEARCH_FORM + "/input[@id='search_button_homepage']")
+    @FindBy(xpath = XPATH_SEARCH_FORM + "//button[@type='submit']")
     public WebElement searchButton;
 
     public DuckDuckGoHomePage enterSearchString(String searchQuery) {
