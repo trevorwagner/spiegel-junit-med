@@ -7,18 +7,18 @@ targetCompatibility = JavaVersion.VERSION_11
 ext {
     versions = [
             apacheCommons   : [
-                    text: '1.9'
+                    text: '1.10.0'
             ],
             cucumber        : '6.11.0',
             hamcrest        : '2.2',
-            jackson         : '2.13.0',
+            jackson         : '2.15.0',
             junit           : '5.7.1',
             spring          : [
                     framework: '5.3.5',
                     boot     : '2.4.2'
             ],
             selenium        : '4.9.0',
-            webdriverManager: '5.0.3'
+            webdriverManager: '5.3.2'
     ]
 }
 
