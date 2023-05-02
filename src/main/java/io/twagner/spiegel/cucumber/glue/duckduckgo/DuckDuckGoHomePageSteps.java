@@ -6,13 +6,7 @@ import io.cucumber.java.en.When;
 import io.twagner.spiegel.cucumber.glue.SpringBootIntegrationTest;
 import io.twagner.spiegel.cucumber.glue.support.languages.en.Expectation;
 import io.twagner.spiegel.pageobjects.duckduckgo.DuckDuckGoHomePage;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-
-import java.time.Duration;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
