@@ -7,7 +7,7 @@ Feature: Evaluate the DuckDuckGo Homepage
     Then the page title on the DuckDuckGo home page should display as DuckDuckGo — Privacy, simplified.
 
   Scenario: The home page logo displays on the DuckDuckGo Homepage
-    Then the home page lgoo should display on the DuckDuckGo home page
+    Then the home page logo should display on the DuckDuckGo home page
 
   Scenario: The search field displays on the DuckDuckGo Homepage
     Then the search query field should display on the DuckDuckGo home page
