@@ -22,7 +22,6 @@ public class DuckDuckGoSerpPageSteps extends SpringBootIntegrationTest {
         assertThat(serpPage.headerSearchButton.isDisplayed(), is(true));
         assertThat(serpPage.headerSearchField.isDisplayed(), is(true));
         assertThat(serpPage.headerSearchButton.isDisplayed(), is(true));
-//        assertThat(serpPage.resultNavigationLinks.length, is(greaterThan(0)));
     }
 
     @Then("^the header logo link (should|should not) display on the DuckDuckGo search results page$")
