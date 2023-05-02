@@ -22,7 +22,6 @@ public class DuckDuckGoSerpPageSteps extends SpringBootIntegrationTest {
         assertThat(serpPage.headerSearchButton.isDisplayed(), is(true));
         assertThat(serpPage.headerSearchField.isDisplayed(), is(true));
         assertThat(serpPage.headerSearchButton.isDisplayed(), is(true));
-//        assertThat(serpPage.resultNavigationLinks.length, is(greaterThan(0)));
     }
 
     @Then("^the header logo link (should|should not) display on the DuckDuckGo search results page$")
@@ -58,19 +57,5 @@ public class DuckDuckGoSerpPageSteps extends SpringBootIntegrationTest {
         String actualTitle = result.findElement(By.xpath("./div/h2")).getText();
 
         assertThat(actualTitle, is(equalTo(specifiedTitle)));
-    }
-
-    @Then("^the ([0-9]+(?:st|nd|rd|th)) search result on the DuckDuckGo search results page should show a link URL of (.*)")
-    public void theNthPositionResultOnTheDuckDuckGoSearchresultsPageShouldShouldNotShowALinkURLOfSpecifiedURL(
-            String position, String expectedUrl
-    ) throws Throwable {
-        this.serpPage = PageFactory.initElements(webDriver, DuckDuckGoSerpPage.class);
-
-        WebElement result = serpPage.getSearchResultByZeroIndex(
-                new OrdinalNumber(position).getZeroIndex()
-        );
-        String displayedUrl = result.findElement(By.xpath(".//div[contains(@class, 'result__extras__url')]/a")).getText();
-
-        assertThat(displayedUrl, is(equalTo(expectedUrl)));
     }
 }

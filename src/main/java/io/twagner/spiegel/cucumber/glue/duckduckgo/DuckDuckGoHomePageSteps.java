@@ -47,11 +47,11 @@ public class DuckDuckGoHomePageSteps extends SpringBootIntegrationTest {
         assertThat(webDriver.getTitle().equals(title), equalTo(should.it));
     }
 
-    @Then("^the home page link (should|should not) display on the DuckDuckGo home page$")
-    public void theHomePageLinkShouldShouldNotDisplayOnTheDuckDuckGoHomePage(String shouldIt) throws Throwable {
+    @Then("^the home page logo (should|should not) display on the DuckDuckGo home page$")
+    public void theHomePageLogoShouldShouldNotDisplayOnTheDuckDuckGoHomePage(String shouldIt) throws Throwable {
         this.duckDuckGoHomePage = PageFactory.initElements(webDriver, DuckDuckGoHomePage.class);
         Expectation should = new Expectation(shouldIt);
-        assertThat(this.duckDuckGoHomePage.homePageLink.isDisplayed(), equalTo(should.it));
+        assertThat(this.duckDuckGoHomePage.homePageLogo.isDisplayed(), equalTo(should.it));
     }
 
     @Then("^the search query field (should|should not) display on the DuckDuckGo home page$")
