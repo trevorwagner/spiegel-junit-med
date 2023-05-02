@@ -59,18 +59,4 @@ public class DuckDuckGoSerpPageSteps extends SpringBootIntegrationTest {
 
         assertThat(actualTitle, is(equalTo(specifiedTitle)));
     }
-
-    @Then("^the ([0-9]+(?:st|nd|rd|th)) search result on the DuckDuckGo search results page should show a link URL of (.*)")
-    public void theNthPositionResultOnTheDuckDuckGoSearchresultsPageShouldShouldNotShowALinkURLOfSpecifiedURL(
-            String position, String expectedUrl
-    ) throws Throwable {
-        this.serpPage = PageFactory.initElements(webDriver, DuckDuckGoSerpPage.class);
-
-        WebElement result = serpPage.getSearchResultByZeroIndex(
-                new OrdinalNumber(position).getZeroIndex()
-        );
-        String displayedUrl = result.findElement(By.xpath(".//div[contains(@class, 'result__extras__url')]/a")).getText();
-
-        assertThat(displayedUrl, is(equalTo(expectedUrl)));
-    }
 }
